@@ -16,6 +16,18 @@ export const Content = styled.div`
   margin: 0 auto;
 `;
 
+export const Column = styled.div`
+  div + div {
+    max-width: 200px;
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    strong {
+      margin-right: 8;
+    }
+  }
+`;
+
 export const Buttons = styled.div`
   margin-top: 16px;
   display: flex;

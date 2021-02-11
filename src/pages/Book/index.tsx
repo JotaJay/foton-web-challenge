@@ -6,6 +6,7 @@ import {
   Container,
   Header,
   Content,
+  Column,
   Card,
   Description,
   Buttons,
@@ -30,18 +31,20 @@ const Book: React.FC = () => {
                 "http://books.google.com/books/content?id=_rtFAQAAIAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
               }
             />
-            <div>
-              <strong>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae,
-                dignissimos!
-              </strong>
-              <p>autor</p>
-            </div>
+            <Column>
+              <div>
+                <strong>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Beatae, dignissimos!
+                </strong>
+                <p>autor</p>
+              </div>
 
-            <div>
-              <strong>$9.99</strong>
-              <p>STARS</p>
-            </div>
+              <div>
+                <strong>$9.99</strong>
+                <span>STARS</span>
+              </div>
+            </Column>
           </Card>
           <Buttons>
             <span>paginas</span>
