@@ -12,12 +12,15 @@ export const Content = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  margin: 0 auto;
 
   div {
-    min-width: 200px;
+    min-width: 300px;
   }
 
   img {
     display: block;
+    width: 80%;
+    margin: 0 auto;
   }
 `;
