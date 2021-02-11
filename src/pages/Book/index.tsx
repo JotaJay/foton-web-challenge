@@ -52,11 +52,6 @@ const Book: React.FC = () => {
     return string.replace(/<(.|\n)*?>/g, "");
   };
 
-  const getCleanDescription = (description: string): string => {
-    const cleanDescription = sanitizeString(description);
-    return truncateString(cleanDescription);
-  };
-
   return (
     <div>
       <Container>
@@ -79,9 +74,7 @@ const Book: React.FC = () => {
                 />
                 <Column>
                   <div>
-                    <strong>
-                      {getCleanDescription(book.volumeInfo.description)}
-                    </strong>
+                    <strong>{book.volumeInfo.title}</strong>
                     <p>By {book?.volumeInfo?.authors[0]}</p>
                   </div>
 
@@ -105,12 +98,7 @@ const Book: React.FC = () => {
         )}
       </Container>
       <Description>
-        <div>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium
-          voluptate consequuntur quam iusto corrupti ex magni! Quae libero est
-          ad architecto, quaerat sint obcaecati hic accusantium, repudiandae
-          culpa qui quia!
-        </div>
+        {book && <div>{sanitizeString(book.volumeInfo?.description)}</div>}
       </Description>
     </div>
   );
