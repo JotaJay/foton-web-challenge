@@ -30,11 +30,30 @@ export const BuyButton = styled.button`
   background-color: #549ae6;
   color: #fff;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: translateY(2px);
+  }
 `;
 
 export const FavoriteButton = styled.button`
   border: 0;
-  background: transparent;
+  background: #e05568;
+  border-radius: 50%;
+  color: #fff;
+  padding: 6px 8px;
+
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: translateY(2px);
+  }
+
+  svg {
+    margin-top: 4px;
+  }
 `;
 
 export const Card = styled.div`

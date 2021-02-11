@@ -1,5 +1,6 @@
 import React from "react";
 import { useRouteMatch } from "react-router-dom";
+import { FiHeart } from "react-icons/fi";
 
 import {
   Container,
@@ -41,7 +42,9 @@ const Book: React.FC = () => {
             <span>paginas</span>
             <div>
               <BuyButton>Buy</BuyButton>
-              <FavoriteButton>favorite</FavoriteButton>
+              <FavoriteButton>
+                <FiHeart />
+              </FavoriteButton>
             </div>
           </Buttons>
         </Content>
