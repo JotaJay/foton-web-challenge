@@ -43,7 +43,7 @@ export const FavoriteButton = styled.button`
   background: #e05568;
   border-radius: 50%;
   color: #fff;
-  padding: 6px 8px;
+  padding: 4px 6px;
 
   transition: transform 0.2s;
 
