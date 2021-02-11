@@ -10,7 +10,6 @@ export default createGlobalStyle`
 
     body {
         -webkit-font-smoothing: antialiased;
-        background: #FFE43B
     }
 
     body, input, button {
@@ -19,9 +18,9 @@ export default createGlobalStyle`
     }
 
     #root {
-        max-width: 960px;
+        /* max-width: 960px; */
         margin: 0 auto;
-        padding: 40px 20px;
+        /* padding: 40px 20px; */
     }
 
     button {

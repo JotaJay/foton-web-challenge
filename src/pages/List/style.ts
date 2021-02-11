@@ -1,6 +1,11 @@
 import styled from "styled-components";
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  max-width: 960px;
+  padding: 40px 20px;
+  margin: 0 auto;
+  background: #ffe43b;
+`;
 
 export const Header = styled.div`
   display: flex;
