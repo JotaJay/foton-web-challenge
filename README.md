@@ -1,43 +1,46 @@
-# Desafio Web Frontend
+# Getting Started with Create React App
 
-Clone este repositório e comece já o nosso desafio.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-OBS: Caso tenha alguma dúvida em relação ao teste é só nos mandar sua pergunta no canal #challenge-foton do Slack do [React Brasil](https://react-brasil-slack.herokuapp.com/).
+## Available Scripts
 
-## API
+In the project directory, you can run:
 
-Use a api do [google books](https://developers.google.com/books/docs/v1/using) para os dados da tela.
+### `yarn start`
 
-```js
-const query = 'harry potter';
-fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}`);
-```
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-OBS: Pode ser utilizado a forma de chamada de apis de sua preferencia (fetch, axios, etc).
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-## Design/Telas
+### `yarn test`
 
-![Design Desafio Frontend Foton](https://user-images.githubusercontent.com/15015324/48946886-4f169880-ef16-11e8-92ba-5754dcff6068.png)
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-O design do site consiste em 3 telas, sendo elas:
+### `yarn build`
 
-### Home
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-1. Crie uma página com base no design apresentado nas telas de Listagem e Detalhes;
-2. É **obrigatório** um botão para navegar para a página de Listagem.
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-### Listagem
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-Nesta tela é **obrigatório** que o usuário tenha possibilidade de:
+### `yarn eject`
 
-1. Ver a lista dos livros;
-2. Possibilitar buscar mais livros com um botão no estilo "Load more";
-3. Buscar livros pelo nome;
-4. Clicar em um dos livros para ver seus detalhes.
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-### Detalhes do Livro
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Nesta tela é **obrigatório** que o usuário tenha possibilidade de:
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-1. Ver as informações completas do livro selecionado;
-2. Poder adicionar uma nota, dar like e adicionar aos favoritos (somente estado interno como useState, useReducer, etc).
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
