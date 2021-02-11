@@ -37,6 +37,11 @@ const Book: React.FC = () => {
               </strong>
               <p>autor</p>
             </div>
+
+            <div>
+              <strong>$9.99</strong>
+              <p>STARS</p>
+            </div>
           </Card>
           <Buttons>
             <span>paginas</span>

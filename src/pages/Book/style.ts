@@ -23,9 +23,9 @@ export const Buttons = styled.div`
 `;
 
 export const BuyButton = styled.button`
-  padding: 6px 36px;
+  padding: 6px 30px;
   margin-right: 8px;
-  border-radius: 8px;
+  border-radius: 12px;
   border: 0;
   background-color: #549ae6;
   color: #fff;
@@ -63,6 +63,9 @@ export const Card = styled.div`
   img {
     margin-right: 14px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  div + div {
   }
 `;
 
