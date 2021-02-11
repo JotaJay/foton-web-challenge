@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useRouteMatch } from "react-router-dom";
-import { FiHeart } from "react-icons/fi";
+import { FiHeart, FiSearch } from "react-icons/fi";
 
 import api from "../../services/api";
 
@@ -60,7 +60,15 @@ const Book: React.FC = () => {
   return (
     <div>
       <Container>
-        <Header></Header>
+        <Header>
+          <div>menu</div>
+          <form>
+            <input type="text" name="book" id="book" />
+          </form>
+          <button>
+            <FiSearch size={24} />
+          </button>
+        </Header>
         {book && (
           <>
             <Content>

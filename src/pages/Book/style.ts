@@ -7,8 +7,23 @@ export const Container = styled.div`
 
 export const Header = styled.div`
   max-width: 960px;
-  padding: 40px 20px;
   margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 42px 0 42px;
+
+  input {
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid lightgray;
+    padding: 8px;
+  }
+
+  button {
+    background: transparent;
+    border: 0;
+    color: lightgray;
+  }
 `;
 
 export const Content = styled.div`
