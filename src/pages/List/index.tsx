@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import api from "../../services/api";
 
+import { FiSearch } from "react-icons/fi";
 import { Container, Header, Content } from "./style";
 
 interface Book {
@@ -37,7 +38,9 @@ const List: React.FC = () => {
         <form>
           <input type="text" name="book" id="book" />
         </form>
-        <button onClick={getBooks}>Search</button>
+        <button onClick={getBooks}>
+          <FiSearch size={24} />
+        </button>
       </Header>
       <Content>
         <div>
