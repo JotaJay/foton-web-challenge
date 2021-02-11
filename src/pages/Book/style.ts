@@ -18,16 +18,19 @@ export const Content = styled.div`
 `;
 
 export const Column = styled.div`
+  margin-top: 6px;
   p {
+    margin-bottom: 18px;
     margin-top: 6px;
   }
+
   div + div {
     max-width: 200px;
     margin-top: 16px;
     display: flex;
     justify-content: space-between;
     strong {
-      margin-right: 8;
+      margin-right: 8px;
     }
   }
 `;

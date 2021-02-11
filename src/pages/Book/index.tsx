@@ -74,7 +74,7 @@ const Book: React.FC = () => {
                     <strong>
                       {getCleanDescription(book.volumeInfo.description)}
                     </strong>
-                    <p>{book?.volumeInfo?.authors[0]}</p>
+                    <p>By {book?.volumeInfo?.authors[0]}</p>
                   </div>
 
                   <div>
