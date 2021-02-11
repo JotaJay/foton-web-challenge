@@ -1,7 +1,5 @@
 import { createGlobalStyle } from "styled-components";
 
-import githubExplorer from "../assets/githubExplorer.svg";
-
 export default createGlobalStyle`
     *{
         margin: 0; 
@@ -11,8 +9,8 @@ export default createGlobalStyle`
     }
 
     body {
-        background: #F0F0F5 url(${githubExplorer}) no-repeat 70% top;
         -webkit-font-smoothing: antialiased;
+        background: #FFE43B
     }
 
     body, input, button {
