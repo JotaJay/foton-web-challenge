@@ -5,6 +5,8 @@
 
 - [ ] Home page
 - [x] List page
+- [ ] List page search working
+- [ ] List page useEffect to fetch books
 - [x] Book details page
 - [x] Books list
 - [x] Book clickable
@@ -12,7 +14,9 @@
 - [ ] Load more books button
 - [x] API service
 - [x] Routes
-- [ ] Route params
+- [x] Route params
+- [ ] Error handling
+- [ ] IsLoading
 - [ ] useState to store user likes, comments and rate
 - [ ] CSS for home, list and book details page
 - [ ] Font family, size and color for whole application
