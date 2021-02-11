@@ -48,6 +48,15 @@ const Book: React.FC = () => {
     return description.slice(0, 400);
   };
 
+  const sanitizeString = (string: string): string => {
+    return string.replace(/<(.|\n)*?>/g, "");
+  };
+
+  const getCleanDescription = (description: string): string => {
+    const cleanDescription = sanitizeString(description);
+    return truncateString(cleanDescription);
+  };
+
   return (
     <div>
       <Container>
@@ -63,7 +72,7 @@ const Book: React.FC = () => {
                 <Column>
                   <div>
                     <strong>
-                      {truncateString(book.volumeInfo.description)}
+                      {getCleanDescription(book.volumeInfo.description)}
                     </strong>
                     <p>{book?.volumeInfo?.authors[0]}</p>
                   </div>
