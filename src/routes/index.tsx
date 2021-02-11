@@ -3,6 +3,7 @@ import { Switch, Route, BrowserRouter } from "react-router-dom";
 
 import Home from "../pages/Home";
 import List from "../pages/List";
+import Book from "../pages/Book";
 
 const Routes: React.FC = () => {
   return (
@@ -10,7 +11,7 @@ const Routes: React.FC = () => {
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/books" exact component={List} />
-        {/* <Route path="/books/:book+" exact component={List} /> */}
+        <Route path="/books/:book+" exact component={Book} />
       </Switch>
     </BrowserRouter>
   );

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import api from "../../services/api";
 
 import { FiSearch } from "react-icons/fi";
@@ -43,12 +44,12 @@ const List: React.FC = () => {
         </button>
       </Header>
       <Content>
-        <div>
+        <Link to={`books/harrypotter`}>
           <img
             src="http://books.google.com/books/content?id=_rtFAQAAIAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
             alt=""
           />
-        </div>
+        </Link>
         <div>
           <img
             src="http://books.google.com/books/content?id=_rtFAQAAIAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"

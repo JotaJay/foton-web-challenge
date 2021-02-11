@@ -32,6 +32,12 @@ export const Content = styled.div`
     margin-top: 32px;
   }
 
+  a {
+    min-width: 300px;
+    margin-top: 32px;
+    display: block;
+  }
+
   img {
     display: block;
     width: 80%;
