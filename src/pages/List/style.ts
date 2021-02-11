@@ -16,6 +16,7 @@ export const Container = styled.div`
 export const Header = styled.div`
   display: flex;
   justify-content: space-between;
+  padding: 0 42px;
 
   input {
     background: transparent;
@@ -45,8 +46,14 @@ export const Content = styled.div`
 
   a {
     min-width: 300px;
-    margin-top: 32px;
+    margin-top: 48px;
     display: block;
+
+    transition: trasnform 0.2s;
+
+    &:hover {
+      transform: translateX(20);
+    }
   }
 
   img {

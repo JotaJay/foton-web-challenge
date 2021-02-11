@@ -45,10 +45,12 @@ const List: React.FC = () => {
         </Header>
         <Content>
           {books.map((book) => {
-            console.log(book);
             return (
               <Link key={book.id} to={`/books/${book.id}`}>
-                <img src={book?.volumeInfo?.imageLinks?.thumbnail} alt="" />
+                <img
+                  src={book?.volumeInfo?.imageLinks?.thumbnail}
+                  alt={book?.volumeInfo?.title}
+                />
               </Link>
             );
           })}
