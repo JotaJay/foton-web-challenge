@@ -1,5 +1,8 @@
 ### Foton Tech Web Challenge
 
+Challenge under development
+Please go to /books to check the list page
+
 - [ ] Home page
 - [x] List page
 - [x] Book details page
