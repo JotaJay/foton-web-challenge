@@ -18,6 +18,9 @@ export const Content = styled.div`
 `;
 
 export const Column = styled.div`
+  p {
+    margin-top: 6px;
+  }
   div + div {
     max-width: 200px;
     margin-top: 16px;
