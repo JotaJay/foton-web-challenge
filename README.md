@@ -5,8 +5,8 @@
 - [x] Book details page
 - [x] Books list
 - [x] Book clickable
-- [] Search book by name
-- [] Load more books button
+- [ ] Search book by name
+- [ ] Load more books button
 - [x] API service
 - [x] Routes
 - [ ] Route params
