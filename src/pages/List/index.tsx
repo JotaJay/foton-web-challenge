@@ -44,16 +44,13 @@ const List: React.FC = () => {
           </button>
         </Header>
         <Content>
-          <Link to={`books/harrypotter`}>
-            <img
-              src="http://books.google.com/books/content?id=_rtFAQAAIAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-              alt=""
-            />
-          </Link>
           {books.map((book) => {
-            <Link key={1} to={`/books/`}>
-              <img src={book?.volumeInfo?.imageLinks?.thumbnail} alt="" />
-            </Link>;
+            console.log(book);
+            return (
+              <Link key={book.id} to={`/books/${book.id}`}>
+                <img src={book?.volumeInfo?.imageLinks?.thumbnail} alt="" />
+              </Link>
+            );
           })}
         </Content>
       </Container>
