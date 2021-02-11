@@ -8,6 +8,8 @@ import {
   Card,
   Description,
   Buttons,
+  BuyButton,
+  FavoriteButton,
 } from "./style";
 
 interface QueryParams {
@@ -38,8 +40,8 @@ const Book: React.FC = () => {
           <Buttons>
             <span>paginas</span>
             <div>
-              <button>like</button>
-              <button>favorite</button>
+              <BuyButton>Buy</BuyButton>
+              <FavoriteButton>favorite</FavoriteButton>
             </div>
           </Buttons>
         </Content>
