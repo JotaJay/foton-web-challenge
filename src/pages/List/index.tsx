@@ -10,7 +10,7 @@ interface Book {
   volumeInfo: {
     title: string;
     author: string;
-    imageLinks: { thumbail: string };
+    imageLinks: { thumbnail: string };
   };
 }
 
@@ -24,8 +24,7 @@ const List: React.FC = () => {
     try {
       const query = "harry potter";
       const response = await api.get<QueryResponse>(`volumes?q=${query}`);
-      const books = response.data;
-      setBooks(books.items);
+      setBooks(response.data.items);
       console.log("books", books);
     } catch (err) {
       console.log(err);
@@ -51,40 +50,10 @@ const List: React.FC = () => {
               alt=""
             />
           </Link>
-          <div>
-            <img
-              src="http://books.google.com/books/content?id=_rtFAQAAIAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-              alt=""
-            />
-          </div>
-          <div>
-            <img
-              src="http://books.google.com/books/content?id=_rtFAQAAIAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-              alt=""
-            />
-          </div>
-          <div>
-            <img
-              src="http://books.google.com/books/content?id=_rtFAQAAIAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-              alt=""
-            />
-          </div>
-          <div>
-            <img
-              src="http://books.google.com/books/content?id=_rtFAQAAIAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-              alt=""
-            />
-          </div>
-          <div>
-            <img
-              src="http://books.google.com/books/content?id=_rtFAQAAIAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-              alt=""
-            />
-          </div>
-          {books?.map((book) => {
-            <div>
-              <img src={book.volumeInfo.imageLinks.thumbail} alt="" />
-            </div>;
+          {books.map((book) => {
+            <Link key={1} to={`/books/`}>
+              <img src={book?.volumeInfo?.imageLinks?.thumbnail} alt="" />
+            </Link>;
           })}
         </Content>
       </Container>
