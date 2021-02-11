@@ -11,7 +11,7 @@ export const Content = styled.div`
   max-width: 960px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
   margin: 0 auto;
 
   div {
