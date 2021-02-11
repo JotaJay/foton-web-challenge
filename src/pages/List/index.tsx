@@ -1,35 +1,49 @@
-import React from "react";
+import React, { useState } from "react";
+import api from "../../services/api";
 
 import { Container, Header, Content } from "./style";
 
+interface Book {
+  id: string;
+  volumeInfo: {
+    title: string;
+    author: string;
+    imageLinks: { thumbail: string };
+  };
+}
+
+interface QueryResponse {
+  items: Book[];
+}
+
 const List: React.FC = () => {
+  const [books, setBooks] = useState<Book[]>([]);
+  const getBooks = async () => {
+    try {
+      const query = "harry potter";
+      const response = await api.get<QueryResponse>(`volumes?q=${query}`);
+      const books = response.data;
+      setBooks(books.items);
+      console.log("books", books);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <Container>
       <Header>
         <div>menu</div>
         <form>
           <input type="text" name="book" id="book" />
-          <button type="submit">Search</button>
         </form>
+        <button onClick={getBooks}>Search</button>
         <Content>
-          <div>
-            <img
-              src="https://images-na.ssl-images-amazon.com/images/I/41OkEEJRkkL._SX333_BO1,204,203,200_.jpg"
-              alt="Winning"
-            />
-          </div>
-          <div>
-            <img
-              src="https://images-na.ssl-images-amazon.com/images/I/41OkEEJRkkL._SX333_BO1,204,203,200_.jpg"
-              alt="Winning"
-            />
-          </div>
-          <div>
-            <img
-              src="https://images-na.ssl-images-amazon.com/images/I/41OkEEJRkkL._SX333_BO1,204,203,200_.jpg"
-              alt="Winning"
-            />
-          </div>
+          {books?.map((book) => {
+            <div>
+              <img src={book.volumeInfo.imageLinks.thumbail} alt="" />
+            </div>;
+          })}
         </Content>
       </Header>
     </Container>
