@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import api from "../../services/api";
 
 import { FiSearch } from "react-icons/fi";
-import { Container, Header, Content } from "./style";
+import { Background, Container, Header, Content } from "./style";
 
 interface Book {
   id: string;
@@ -33,60 +33,62 @@ const List: React.FC = () => {
   };
 
   return (
-    <Container>
-      <Header>
-        <div>menu</div>
-        <form>
-          <input type="text" name="book" id="book" />
-        </form>
-        <button onClick={getBooks}>
-          <FiSearch size={24} />
-        </button>
-      </Header>
-      <Content>
-        <Link to={`books/harrypotter`}>
-          <img
-            src="http://books.google.com/books/content?id=_rtFAQAAIAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-            alt=""
-          />
-        </Link>
-        <div>
-          <img
-            src="http://books.google.com/books/content?id=_rtFAQAAIAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-            alt=""
-          />
-        </div>
-        <div>
-          <img
-            src="http://books.google.com/books/content?id=_rtFAQAAIAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-            alt=""
-          />
-        </div>
-        <div>
-          <img
-            src="http://books.google.com/books/content?id=_rtFAQAAIAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-            alt=""
-          />
-        </div>
-        <div>
-          <img
-            src="http://books.google.com/books/content?id=_rtFAQAAIAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-            alt=""
-          />
-        </div>
-        <div>
-          <img
-            src="http://books.google.com/books/content?id=_rtFAQAAIAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-            alt=""
-          />
-        </div>
-        {books?.map((book) => {
+    <Background>
+      <Container>
+        <Header>
+          <div>menu</div>
+          <form>
+            <input type="text" name="book" id="book" />
+          </form>
+          <button onClick={getBooks}>
+            <FiSearch size={24} />
+          </button>
+        </Header>
+        <Content>
+          <Link to={`books/harrypotter`}>
+            <img
+              src="http://books.google.com/books/content?id=_rtFAQAAIAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+              alt=""
+            />
+          </Link>
           <div>
-            <img src={book.volumeInfo.imageLinks.thumbail} alt="" />
-          </div>;
-        })}
-      </Content>
-    </Container>
+            <img
+              src="http://books.google.com/books/content?id=_rtFAQAAIAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              src="http://books.google.com/books/content?id=_rtFAQAAIAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              src="http://books.google.com/books/content?id=_rtFAQAAIAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              src="http://books.google.com/books/content?id=_rtFAQAAIAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              src="http://books.google.com/books/content?id=_rtFAQAAIAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+              alt=""
+            />
+          </div>
+          {books?.map((book) => {
+            <div>
+              <img src={book.volumeInfo.imageLinks.thumbail} alt="" />
+            </div>;
+          })}
+        </Content>
+      </Container>
+    </Background>
   );
 };
 
