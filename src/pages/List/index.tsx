@@ -6,6 +6,7 @@ import { parseQueryString } from "../../utils/parseQueryString";
 
 import { FiSearch } from "react-icons/fi";
 import { Background, Container, Header, Content } from "./style";
+import { useQueryParam, StringParam } from "use-query-params";
 
 interface Book {
   id: string;
@@ -22,6 +23,7 @@ interface QueryResponse {
 
 const List = () => {
   const bookTitle = useLocation().search;
+  const [queryString, setQueryString] = useQueryParam("title", StringParam);
   const { register, handleSubmit } = useForm();
   const [books, setBooks] = useState<Book[]>([]);
   const [search, setSearch] = useState(() => {
@@ -36,7 +38,7 @@ const List = () => {
   }, [search]);
 
   const onSubmit = (search: Record<string, string>) => {
-    console.log("on submit", search.title);
+    setQueryString(search.title);
     setSearch(search.title);
   };
 
