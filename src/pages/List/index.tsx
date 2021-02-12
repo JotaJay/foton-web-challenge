@@ -21,12 +21,12 @@ interface QueryResponse {
 }
 
 const List = () => {
-  const title = useLocation().search;
+  const bookTitle = useLocation().search;
   const { register, handleSubmit } = useForm();
   const [books, setBooks] = useState<Book[]>([]);
   const [search, setSearch] = useState(() => {
-    if (title) {
-      return parseQueryString(title);
+    if (bookTitle) {
+      return parseQueryString(bookTitle).title;
     }
     return "";
   });
@@ -36,7 +36,7 @@ const List = () => {
   }, [search]);
 
   const onSubmit = (search: Record<string, string>) => {
-    console.log(search);
+    console.log("on submit", search.title);
     setSearch(search.title);
   };
 
@@ -44,7 +44,6 @@ const List = () => {
     try {
       const response = await api.get<QueryResponse>(`volumes?q=${search}`);
       setBooks(response.data.items);
-      console.log("books", books);
     } catch (err) {
       console.log(err);
     }
