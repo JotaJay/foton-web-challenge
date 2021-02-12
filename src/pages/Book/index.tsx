@@ -3,6 +3,7 @@ import { useRouteMatch } from "react-router-dom";
 import { FiHeart, FiSearch } from "react-icons/fi";
 
 import api from "../../services/api";
+import { sanitizeString } from "../../utils/sanitizeString";
 
 import {
   Container,
@@ -47,10 +48,6 @@ const Book: React.FC = () => {
       setBook(response.data);
     });
   }, [params.book]);
-
-  const sanitizeString = (string: string): string => {
-    return string.replace(/<(.|\n)*?>/g, "");
-  };
 
   return (
     <div>
