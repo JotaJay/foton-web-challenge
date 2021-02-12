@@ -29,6 +29,7 @@ interface Book {
     authors: string[];
     printedPageCount: number;
     publisher: string;
+    averageRating: number;
   };
 }
 
@@ -86,7 +87,11 @@ const Book: React.FC = () => {
 
                   <div>
                     <strong>$9.99</strong>
-                    <span>STARS</span>
+                    <span>
+                      {book?.volumeInfo?.averageRating
+                        ? book?.volumeInfo?.averageRating
+                        : 0}
+                    </span>
                   </div>
                 </Column>
               </Card>
