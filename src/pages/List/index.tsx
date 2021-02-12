@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import api from "../../services/api";
+import { parseQueryString } from "../../utils/parseQueryString";
 
 import { FiSearch } from "react-icons/fi";
 import { Background, Container, Header, Content } from "./style";
@@ -19,13 +20,24 @@ interface QueryResponse {
 }
 
 const List = () => {
-  const [books, setBooks] = useState<Book[]>([]);
   const title = useLocation().search;
-  console.log("title", title);
+  const [books, setBooks] = useState<Book[]>([]);
+  const [search, setSearch] = useState(() => {
+    if (title) {
+      console.log("DEU");
+      return parseQueryString(title);
+    }
+    console.log("deu nao");
+    return "";
+  });
+
+  useEffect(() => {
+    getBooks();
+  }, [search]);
+
   const getBooks = async () => {
     try {
-      const query = "harry potter";
-      const response = await api.get<QueryResponse>(`volumes?q=${query}`);
+      const response = await api.get<QueryResponse>(`volumes?q=${search}`);
       setBooks(response.data.items);
       console.log("books", books);
     } catch (err) {
