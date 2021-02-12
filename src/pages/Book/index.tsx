@@ -28,6 +28,7 @@ interface Book {
     description: string;
     authors: string[];
     printedPageCount: number;
+    publisher: string;
   };
 }
 
@@ -75,7 +76,12 @@ const Book: React.FC = () => {
                 <Column>
                   <div>
                     <strong>{book.volumeInfo.title}</strong>
-                    <p>By {book?.volumeInfo?.authors[0]}</p>
+                    <p>
+                      By{" "}
+                      {book?.volumeInfo?.authors
+                        ? book?.volumeInfo?.authors[0]
+                        : book.volumeInfo.publisher}
+                    </p>
                   </div>
 
                   <div>
