@@ -5,7 +5,7 @@ import Home from "../pages/Home";
 import List from "../pages/List";
 import Book from "../pages/Book";
 
-const Routes: React.FC = () => {
+const Routes = () => {
   return (
     <BrowserRouter>
       <Switch>

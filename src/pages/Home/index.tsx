@@ -7,8 +7,8 @@ const Home = () => {
   const { register, handleSubmit } = useForm();
   const history = useHistory();
 
-  const onSubmit = (book: Record<string, string>) => {
-    history.push("/books", { book });
+  const onSubmit = (search: Record<string, string>) => {
+    history.push({ pathname: "/books", search: `?title=${search.book}` });
   };
   return (
     <Background>

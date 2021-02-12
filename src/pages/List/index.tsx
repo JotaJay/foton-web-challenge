@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import api from "../../services/api";
 
 import { FiSearch } from "react-icons/fi";
@@ -18,8 +18,10 @@ interface QueryResponse {
   items: Book[];
 }
 
-const List: React.FC = () => {
+const List = () => {
   const [books, setBooks] = useState<Book[]>([]);
+  const title = useLocation().search;
+  console.log("title", title);
   const getBooks = async () => {
     try {
       const query = "harry potter";
