@@ -31,6 +31,11 @@ interface Book {
     publisher: string;
     averageRating: number;
   };
+  saleInfo: {
+    listPrice: {
+      amount: number;
+    };
+  };
 }
 
 const Book: React.FC = () => {
@@ -86,7 +91,11 @@ const Book: React.FC = () => {
                   </div>
 
                   <div>
-                    <strong>$9.99</strong>
+                    <strong>
+                      {book?.saleInfo?.listPrice
+                        ? `$${book.saleInfo.listPrice.amount}`
+                        : "Price unavailable"}
+                    </strong>
                     <span>
                       {book?.volumeInfo?.averageRating
                         ? book?.volumeInfo?.averageRating
