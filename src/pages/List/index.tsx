@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, FormEvent } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useForm } from "react-hook-form";
 import api from "../../services/api";
 import { parseQueryString } from "../../utils/parseQueryString";
 
@@ -21,19 +22,23 @@ interface QueryResponse {
 
 const List = () => {
   const title = useLocation().search;
+  const { register, handleSubmit } = useForm();
   const [books, setBooks] = useState<Book[]>([]);
   const [search, setSearch] = useState(() => {
     if (title) {
-      console.log("DEU");
       return parseQueryString(title);
     }
-    console.log("deu nao");
     return "";
   });
 
   useEffect(() => {
     getBooks();
   }, [search]);
+
+  const onSubmit = (search: Record<string, string>) => {
+    console.log(search);
+    setSearch(search.title);
+  };
 
   const getBooks = async () => {
     try {
@@ -50,12 +55,12 @@ const List = () => {
       <Container>
         <Header>
           <div>menu</div>
-          <form>
-            <input type="text" name="book" id="book" />
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <input type="text" name="title" ref={register} />
+            <button>
+              <FiSearch size={24} />
+            </button>
           </form>
-          <button onClick={getBooks}>
-            <FiSearch size={24} />
-          </button>
         </Header>
         <Content>
           {books.map((book) => {
