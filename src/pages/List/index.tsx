@@ -64,7 +64,7 @@ const List = () => {
           </form>
         </Header>
         <Content>
-          {books.map((book) => {
+          {books?.map((book) => {
             return (
               <Link key={book.id} to={`/books/${book.id}`}>
                 <img
