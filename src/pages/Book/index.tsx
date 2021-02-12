@@ -27,6 +27,7 @@ interface Book {
     imageLinks: { thumbnail: string };
     description: string;
     authors: string[];
+    printedPageCount: number;
   };
 }
 
@@ -84,7 +85,7 @@ const Book: React.FC = () => {
                 </Column>
               </Card>
               <Buttons>
-                <span>paginas</span>
+                <span>{book?.volumeInfo?.printedPageCount} pages</span>
                 <div>
                   <BuyButton>Buy</BuyButton>
                   <FavoriteButton>

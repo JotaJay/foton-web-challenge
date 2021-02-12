@@ -35,7 +35,7 @@ const List = () => {
 
   useEffect(() => {
     getBooks();
-  }, [search]);
+  }, [search, queryString]);
 
   const onSubmit = (search: Record<string, string>) => {
     setQueryString(search.title);
