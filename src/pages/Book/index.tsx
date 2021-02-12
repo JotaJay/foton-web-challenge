@@ -37,16 +37,15 @@ const Book: React.FC = () => {
   useEffect(() => {
     api.get<Book>(`volumes/${params.book}`).then((response) => {
       setBook(response.data);
-      console.log("oi", book);
     });
   }, [params.book]);
 
-  // const truncateString = (description: string): string => {
-  //   if (description.length > 400) {
-  //     return `${description.slice(0, 400)} ...`;
-  //   }
-  //   return description.slice(0, 400);
-  // };
+  const truncateString = (description: string): string => {
+    if (description.length > 400) {
+      return `${description.slice(0, 400)} ...`;
+    }
+    return description.slice(0, 400);
+  };
 
   const sanitizeString = (string: string): string => {
     return string.replace(/<(.|\n)*?>/g, "");
@@ -69,7 +68,7 @@ const Book: React.FC = () => {
             <Content>
               <Card>
                 <img
-                  src={book.volumeInfo.imageLinks.thumbnail}
+                  src={book?.volumeInfo?.imageLinks?.thumbnail}
                   alt={book.volumeInfo.title}
                 />
                 <Column>
@@ -98,7 +97,13 @@ const Book: React.FC = () => {
         )}
       </Container>
       <Description>
-        {book && <div>{sanitizeString(book.volumeInfo?.description)}</div>}
+        {book && (
+          <div>
+            {book.volumeInfo.description
+              ? sanitizeString(book.volumeInfo?.description)
+              : "No description"}
+          </div>
+        )}
       </Description>
     </div>
   );

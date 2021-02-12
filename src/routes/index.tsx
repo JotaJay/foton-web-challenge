@@ -10,11 +10,11 @@ const Routes = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/" exact component={Home} />
         <QueryParamProvider ReactRouterRoute={Route}>
+          <Route path="/" exact component={Home} />
           <Route path="/books" exact component={List} />
+          <Route path="/books/:book+" exact component={Book} />
         </QueryParamProvider>
-        <Route path="/books/:book+" exact component={Book} />
       </Switch>
     </BrowserRouter>
   );
