@@ -41,12 +41,12 @@ const Book: React.FC = () => {
     });
   }, [params.book]);
 
-  const truncateString = (description: string): string => {
-    if (description.length > 400) {
-      return `${description.slice(0, 400)} ...`;
-    }
-    return description.slice(0, 400);
-  };
+  // const truncateString = (description: string): string => {
+  //   if (description.length > 400) {
+  //     return `${description.slice(0, 400)} ...`;
+  //   }
+  //   return description.slice(0, 400);
+  // };
 
   const sanitizeString = (string: string): string => {
     return string.replace(/<(.|\n)*?>/g, "");
