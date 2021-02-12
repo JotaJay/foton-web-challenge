@@ -1,12 +1,14 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { Background, Container } from "./style";
 
 const Home = () => {
   const { register, handleSubmit } = useForm();
+  const history = useHistory();
 
-  const onSubmit = (data: Record<string, string>) => {
-    console.log(data);
+  const onSubmit = (book: Record<string, string>) => {
+    history.push("/books", { book });
   };
   return (
     <Background>
