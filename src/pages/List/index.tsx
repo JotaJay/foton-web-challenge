@@ -31,9 +31,9 @@ const List: React.FC = () => {
     },
   });
   const [startIndex, setStartIndex] = useState(0);
-  const [maxResults, setMaxResults] = useState(9);
   const [totalItems, setTotalItems] = useState(0);
   const [books, setBooks] = useState<Book[]>([]);
+  const maxResults = 9;
 
   useEffect(() => {
     /**

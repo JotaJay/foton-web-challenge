@@ -19,6 +19,7 @@ export const Header = styled.div`
   padding: 0 42px;
   width: 100%;
   margin: 0 auto;
+  background: pink;
 
   /* smartphones in portrait mode */
   @media (max-width: 420px) {
@@ -27,11 +28,16 @@ export const Header = styled.div`
 
   /* smartphones in landscape mode */
   @media (max-width: 767px) {
-    background: green;
+    width: 78%;
+    background: transparent;
+
+    form {
+      min-width: 330px;
+      width: 100%;
+    }
   }
 
   input {
-    /* margin-left: 25%; */
     background: transparent;
     border: 0;
     border-bottom: 1px solid lightgray;
@@ -39,10 +45,9 @@ export const Header = styled.div`
   }
 
   button {
-    /* float: right; */
-    background: transparent;
     border: 0;
     color: lightgray;
+    background: transparent;
   }
 
   form {
