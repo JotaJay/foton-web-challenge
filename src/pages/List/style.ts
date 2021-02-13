@@ -45,7 +45,7 @@ export const Content = styled.div`
   }
 
   a {
-    min-width: 300px;
+    width: 264px;
     margin-top: 48px;
     display: block;
 
@@ -60,5 +60,6 @@ export const Content = styled.div`
     display: block;
     width: 80%;
     margin: 0 auto;
+    height: 300px;
   }
 `;
