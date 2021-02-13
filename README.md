@@ -1,6 +1,8 @@
 ### Foton Tech Web Challenge
 
 - Challenge under development
+  [I'm an inline-style link](https://www.google.com)
+  [I'm an inline-style link with title](https://www.google.com "Google's Homepage")
 
 - [x] List page
 - [x] List page search working
