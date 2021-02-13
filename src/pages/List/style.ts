@@ -29,6 +29,10 @@ export const Header = styled.div`
     font-size: 18px;
     font-weight: bold;
     text-transform: uppercase;
+
+    &::placeholder {
+      font-size: 12px;
+    }
   }
 
   button {

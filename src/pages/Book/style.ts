@@ -17,6 +17,10 @@ export const Header = styled.div`
     border: 0;
     border-bottom: 1px solid #c8d3d5;
     padding: 8px;
+
+    &::placeholder {
+      font-size: 12px;
+    }
   }
 
   button {

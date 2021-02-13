@@ -104,7 +104,12 @@ const List: React.FC = () => {
                 </ul>
               </div>
             </div>
-            <input type="text" name="title" ref={register} />
+            <input
+              type="text"
+              name="title"
+              ref={register}
+              placeholder="Type a book title or genre"
+            />
             <button>
               <AiOutlineSearch size={32} />
             </button>

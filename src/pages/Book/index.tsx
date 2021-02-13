@@ -86,7 +86,12 @@ const Book: React.FC = () => {
         <Header>
           <AiOutlineArrowLeft size={26} onClick={handleGoBack} />
           <form>
-            <input type="text" name="book" id="book" />
+            <input
+              type="text"
+              name="book"
+              id="book"
+              placeholder="Type a book title or genre"
+            />
           </form>
           <button>
             <AiOutlineSearch size={32} />
