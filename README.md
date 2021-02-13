@@ -15,10 +15,10 @@
 - [x] Route params
 - [x] IsLoading
 - [x] star rating
+- [x] useState to store user rating and favorite
 - [ ] Home page
 - [ ] Error handling
 - [ ] Load more books button
 - [ ] Dynamic buy link
-- [ ] useState to store user likes, comments and rate
 - [ ] Burger menu and header component
 - [ ] Polish and finish layout
