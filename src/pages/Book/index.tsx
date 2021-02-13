@@ -46,6 +46,8 @@ const Book: React.FC = () => {
     params: { bookId },
   } = useRouteMatch<QueryParams>();
   const [book, setBook] = useState<Book | null>();
+  const [rating, setRating] = useState<number>(0);
+  const [favorite, setFavorite] = useState();
 
   useEffect(() => {
     /**
@@ -54,9 +56,14 @@ const Book: React.FC = () => {
     const getBookById = async () => {
       const { data } = await api.get<Book>(`volumes/${bookId}`);
       setBook(data);
+      setRating(data.volumeInfo.averageRating || 0);
     };
     getBookById();
   }, [bookId]);
+
+  const setNewRating = (newValue: number) => {
+    setRating(newValue);
+  };
 
   return (
     <div>
@@ -98,23 +105,15 @@ const Book: React.FC = () => {
                         : "Price unavailable"}
                     </strong>
                     <span>
-                      {book.volumeInfo.averageRating ? (
-                        <StarRatingComponent
-                          name="rate1"
-                          starCount={5}
-                          value={book?.volumeInfo?.averageRating}
-                          editing={false}
-                          emptyStarColor={"#ccc"}
-                        />
-                      ) : (
-                        <StarRatingComponent
-                          name="rate1"
-                          starCount={5}
-                          value={0}
-                          editing={false}
-                          emptyStarColor={"#ccc"}
-                        />
-                      )}
+                      <StarRatingComponent
+                        name="rate1"
+                        starCount={5}
+                        value={rating}
+                        onStarClick={(newValue) => {
+                          setNewRating(newValue);
+                        }}
+                        emptyStarColor={"#ccc"}
+                      />
                     </span>
                   </div>
                 </Column>
