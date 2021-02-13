@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from "react";
 import { Switch, Route, BrowserRouter } from "react-router-dom";
 import { QueryParamProvider } from "use-query-params";
+import { LoaderComponent } from "../components/Loader";
 
 const Home = lazy(() => import("../pages/Home"));
 const List = lazy(() => import("../pages/List"));
@@ -11,10 +12,10 @@ const Routes = () => {
     <BrowserRouter>
       <Switch>
         <QueryParamProvider ReactRouterRoute={Route}>
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={LoaderComponent}>
             <Route path="/" exact component={Home} />
             <Route path="/books" exact component={List} />
-            <Route path="/books/:bookId+" component={Book} />  
+            <Route path="/books/:bookId+" component={Book} />
           </Suspense>
         </QueryParamProvider>
       </Switch>
