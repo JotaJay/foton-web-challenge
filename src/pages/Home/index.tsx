@@ -9,7 +9,13 @@ const Home: React.FC = () => {
   const history = useHistory();
 
   const onSubmit = (search: Record<string, string>) => {
-    history.push({ pathname: "/books", search: `?title=${search.book}` });
+    if (search.book.trim().length < 1) {
+      return;
+    }
+    history.push({
+      pathname: "/books",
+      search: `?title=${search.book.trim()}`,
+    });
   };
 
   return (
@@ -18,7 +24,12 @@ const Home: React.FC = () => {
         <h1>Foton Booky</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div>
-            <input type="text" name="book" ref={register} />
+            <input
+              type="text"
+              name="book"
+              ref={register}
+              placeholder="Type a book title or genre"
+            />
             <button>
               <AiOutlineSearch size={24} />
             </button>

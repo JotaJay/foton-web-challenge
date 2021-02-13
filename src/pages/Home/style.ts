@@ -35,6 +35,10 @@ export const Container = styled.div`
       text-transform: uppercase;
       font-weight: bold;
       text-align: center;
+
+      &::placeholder {
+        font-size: 12px;
+      }
     }
 
     button {
@@ -66,6 +70,10 @@ export const Container = styled.div`
         font-weight: bold;
         text-align: center;
         font-size: 12px;
+
+        &::placeholder {
+          font-size: 6px;
+        }
       }
     }
   }
