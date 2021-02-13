@@ -46,4 +46,27 @@ export const Container = styled.div`
       }
     }
   }
+
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 32px;
+    }
+    form {
+      div {
+        margin-top: 8px;
+        background: #fff;
+        border-radius: 16px;
+        padding: 8px 4px;
+      }
+      input {
+        border: 0;
+        background: transparent;
+        padding: 0 64px;
+        text-transform: uppercase;
+        font-weight: bold;
+        text-align: center;
+        font-size: 12px;
+      }
+    }
+  }
 `;
