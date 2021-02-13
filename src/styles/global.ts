@@ -15,13 +15,10 @@ export default createGlobalStyle`
     body, input, button {
         font-family:  "Roboto", sans-serif;
         font-size: 16px;
-        
     }
 
     #root {
-        /* max-width: 960px; */
         margin: 0 auto;
-        /* padding: 40px 20px; */
     }
 
     button {

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100vw;
-  background: #ffe43b;
+  background: ${({ theme }) => theme.colors.primary.main};
 `;
 
 export const Header = styled.div`

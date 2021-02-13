@@ -18,7 +18,7 @@ import {
 } from "./style";
 
 interface QueryParams {
-  book: string;
+  bookId: string;
 }
 
 interface Book {
@@ -40,14 +40,23 @@ interface Book {
 }
 
 const Book: React.FC = () => {
-  const { params } = useRouteMatch<QueryParams>();
+  const { params: { bookId } } = useRouteMatch<QueryParams>();
   const [book, setBook] = useState<Book | null>();
 
   useEffect(() => {
-    api.get<Book>(`volumes/${params.book}`).then((response) => {
-      setBook(response.data);
-    });
-  }, [params.book]);
+    /**
+     * Se o livro não existir?
+     */
+    const getBookById = async () => {
+      const { data } = await api.get<Book>(`volumes/${bookId}`);
+      setBook(data)
+    }
+    getBookById()
+  }, [bookId]);
+
+  const sanitizeString = (string: string): string => {
+    return string.replace(/<(.|\n)*?>/g, "");
+  };
 
   return (
     <div>
