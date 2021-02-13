@@ -1,7 +1,7 @@
 ### Foton Tech Web Challenge
 
 - Challenge under development
-  [Stage URL](https://60273dbab46f993863e43899--foton-challenge-rocks.netlify.app "App current state")
+  [Stage URL](https://6027cb49b3c4ac1f77075871--foton-challenge-rocks.netlify.app "App current state")
 
 - [x] List page
 - [x] List page search working
@@ -20,6 +20,6 @@
 - [ ] Burger menu and header component
 - [ ] Error handling
 
-- [ ] Dynamic buy link
 - [ ] Home page
 - [ ] Polish and finish layout
+- [ ] Dynamic buy link
