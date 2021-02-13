@@ -49,6 +49,10 @@ export const Column = styled.div`
   justify-content: space-between;
   height: 160px;
 
+  div {
+    min-width: 190px;
+  }
+
   p {
     margin-bottom: 18px;
     color: #6e7271;
