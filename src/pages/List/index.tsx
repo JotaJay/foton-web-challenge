@@ -111,9 +111,11 @@ const List: React.FC = () => {
               })
             )}
           </Content>
-          <Center>
-            <Button onClick={onLoadMoreClick}>Load more</Button>
-          </Center>
+          {totalItems > books.length && (
+            <Center>
+              <Button onClick={onLoadMoreClick}>Load more</Button>
+            </Center>
+          )}
         </Container>
       </Background>
     </LeftSideBurgerMenu>
