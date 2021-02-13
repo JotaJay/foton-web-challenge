@@ -15,21 +15,45 @@ export const Container = styled.div`
 
 export const Header = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   padding: 0 42px;
+  width: 100%;
+  margin: 0 auto;
+
+  /* smartphones in portrait mode */
+  @media (max-width: 420px) {
+    background: green;
+  }
+
+  /* smartphones in landscape mode */
+  @media (max-width: 767px) {
+    background: green;
+  }
 
   input {
+    /* margin-left: 25%; */
     background: transparent;
     border: 0;
     border-bottom: 1px solid lightgray;
-    padding: 8px;
+    padding: 12px 8px;
   }
 
   button {
+    /* float: right; */
     background: transparent;
     border: 0;
     color: lightgray;
   }
+
+  form {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* @media (max-width: 800px) {
+    background: black;
+  } */
 `;
 
 export const Content = styled.div`

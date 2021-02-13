@@ -50,6 +50,7 @@ const List: React.FC = () => {
         console.log(err);
       }
     };
+    setBooks([]);
     getBooks();
   }, [title]);
 
@@ -87,8 +88,8 @@ const List: React.FC = () => {
       <Background>
         <Container>
           <Header>
-            <div>menu</div>
             <form onSubmit={handleSubmit(onSubmit)}>
+              <div>&nbsp;</div>
               <input type="text" name="title" ref={register} />
               <button>
                 <FiSearch size={24} />
@@ -111,7 +112,7 @@ const List: React.FC = () => {
               })
             )}
           </Content>
-          {totalItems > books.length && (
+          {books.length && totalItems > books.length && (
             <Center>
               <Button onClick={onLoadMoreClick}>Load more</Button>
             </Center>
