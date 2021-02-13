@@ -16,7 +16,7 @@
 - [x] IsLoading
 - [x] star rating
 - [x] useState to store user rating and favorite
-- [ ] Load more books button
+- [x] Load more books button
 - [ ] Burger menu and header component
 - [ ] Error handling
 

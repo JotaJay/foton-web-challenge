@@ -19,6 +19,7 @@ interface Book {
 }
 
 interface QueryResponse {
+  totalItems: number;
   items: Book[];
 }
 
@@ -31,7 +32,7 @@ const List: React.FC = () => {
   });
   const [startIndex, setStartIndex] = useState(0);
   const [maxResults, setMaxResults] = useState(9);
-  const [totalItems, setTotalItems] = useState();
+  const [totalItems, setTotalItems] = useState(0);
   const [books, setBooks] = useState<Book[]>([]);
 
   useEffect(() => {
@@ -44,6 +45,7 @@ const List: React.FC = () => {
           `volumes?q=${title}&startIndex=${startIndex}&maxResults=${maxResults}`
         );
         setBooks(data.items);
+        setTotalItems(data.totalItems);
       } catch (err) {
         console.log(err);
       }
@@ -70,8 +72,15 @@ const List: React.FC = () => {
   };
 
   const onLoadMoreClick = () => {
-    setStartIndex(startIndex + 9);
-    setMaxResults(maxResults + 9);
+    const itemsLeft = totalItems - books.length;
+    if (itemsLeft > 9) {
+      setStartIndex(startIndex + 9);
+      setMaxResults(maxResults + 9);
+      return;
+    }
+
+    setStartIndex(startIndex + itemsLeft);
+    setMaxResults(maxResults + itemsLeft);
   };
 
   return (
