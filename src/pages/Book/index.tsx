@@ -10,7 +10,8 @@ import StarRatingComponent from "react-star-rating-component";
 import { LoaderComponent } from "../../components/Loader";
 
 import api from "../../services/api";
-import { sanitizeString } from "../../utils/sanitizeString";
+import sanitizeString from "../../utils/sanitizeString";
+import truncateString from "../../utils/truncateString";
 
 import {
   Container,
@@ -103,7 +104,7 @@ const Book: React.FC = () => {
                 />
                 <Column>
                   <div>
-                    <strong>{book.volumeInfo.title}</strong>
+                    <strong>{truncateString(book.volumeInfo.title)}</strong>
                     <p>
                       By{" "}
                       {book.volumeInfo.authors
