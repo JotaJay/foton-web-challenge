@@ -65,7 +65,7 @@ const List: React.FC = () => {
       }
     };
     getBooks();
-  }, [maxResults]);
+  }, [startIndex]);
 
   const onSubmit = (search: Record<string, string>) => {
     setTitle(search.title);
@@ -73,14 +73,13 @@ const List: React.FC = () => {
 
   const onLoadMoreClick = () => {
     const itemsLeft = totalItems - books.length;
+    console.log("itemsleft", itemsLeft);
     if (itemsLeft > 9) {
       setStartIndex(startIndex + 9);
-      setMaxResults(maxResults + 9);
       return;
     }
 
     setStartIndex(startIndex + itemsLeft);
-    setMaxResults(maxResults + itemsLeft);
   };
 
   return (

@@ -89,7 +89,7 @@ const Book: React.FC = () => {
             <Content>
               <Card>
                 <img
-                  src={book.volumeInfo.imageLinks.thumbnail}
+                  src={book.volumeInfo.imageLinks?.thumbnail}
                   alt={book.volumeInfo.title}
                 />
                 <Column>
