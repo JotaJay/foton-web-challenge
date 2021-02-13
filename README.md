@@ -1,7 +1,7 @@
 ### Foton Tech Web Challenge
 
 - Challenge under development
-  [Stage URL](https://6027cb49b3c4ac1f77075871--foton-challenge-rocks.netlify.app "App current state")
+  [Stage URL](https://6027f014f649915be93a11c6--foton-challenge-rocks.netlify.app "App current state")
 
 - [x] List page
 - [x] List page search working
