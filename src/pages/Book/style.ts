@@ -24,6 +24,11 @@ export const Header = styled.div`
     border: 0;
     color: #c8d3d5;
   }
+
+  svg {
+    color: #c8d3d5;
+    cursor: pointer;
+  }
 `;
 
 export const Content = styled.div`
@@ -41,7 +46,6 @@ export const Column = styled.div`
 
   p {
     margin-bottom: 18px;
-    margin-top: 6px;
     color: #6e7271;
     font-size: 14px;
   }

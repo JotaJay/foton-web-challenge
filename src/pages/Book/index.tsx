@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useRouteMatch } from "react-router-dom";
-import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
-import { FiSearch } from "react-icons/fi";
+import {
+  AiFillHeart,
+  AiOutlineHeart,
+  AiOutlineSearch,
+  AiOutlineArrowLeft,
+} from "react-icons/ai";
 import StarRatingComponent from "react-star-rating-component";
 import { LoaderComponent } from "../../components/Loader";
 
@@ -74,12 +78,12 @@ const Book: React.FC = () => {
     <div>
       <Container>
         <Header>
-          <div>menu</div>
+          <AiOutlineArrowLeft size={26} />
           <form>
             <input type="text" name="book" id="book" />
           </form>
           <button>
-            <FiSearch size={24} />
+            <AiOutlineSearch size={32} />
           </button>
         </Header>
         {!book ? (
