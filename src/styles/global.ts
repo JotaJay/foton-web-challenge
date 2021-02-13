@@ -15,6 +15,7 @@ export default createGlobalStyle`
     body, input, button {
         font-family:  "Roboto", sans-serif;
         font-size: 16px;
+        line-height:1.6
     }
 
     #root {

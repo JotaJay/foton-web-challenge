@@ -15,14 +15,14 @@ export const Header = styled.div`
   input {
     background: transparent;
     border: 0;
-    border-bottom: 1px solid lightgray;
+    border-bottom: 1px solid #c8d3d5;
     padding: 8px;
   }
 
   button {
     background: transparent;
     border: 0;
-    color: lightgray;
+    color: #c8d3d5;
   }
 `;
 
@@ -37,6 +37,8 @@ export const Column = styled.div`
   p {
     margin-bottom: 18px;
     margin-top: 6px;
+    color: #6e7271;
+    font-size: 14px;
   }
 
   div + div {
@@ -45,10 +47,6 @@ export const Column = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    /* strong {
-      margin-right: 16px;
-    } */
   }
 
   span {
@@ -61,6 +59,11 @@ export const Buttons = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  span {
+    color: #6e7271;
+    font-size: 14px;
+  }
 `;
 
 export const BuyButton = styled.button`

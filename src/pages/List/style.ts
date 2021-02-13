@@ -23,13 +23,13 @@ export const Header = styled.div`
   input {
     background: transparent;
     border: 0;
-    border-bottom: 1px solid lightgray;
+    border-bottom: 1px solid #c8d3d5;
     padding: 12px 8px;
   }
 
   button {
     border: 0;
-    color: lightgray;
+    color: #c8d3d5;
     background: transparent;
   }
 
