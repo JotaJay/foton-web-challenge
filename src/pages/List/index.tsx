@@ -97,14 +97,9 @@ const List: React.FC = () => {
               <div className="dropdown-content">
                 <ul className="bugerMenuList">
                   <li>
-                    <a href="/" className="linkToHome">
+                    <Link to="/" className="linkToHome">
                       Home
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/books" className="linkToList">
-                      List
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>

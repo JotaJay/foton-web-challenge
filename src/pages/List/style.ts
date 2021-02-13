@@ -15,9 +15,9 @@ export const Container = styled.div`
 
 export const Header = styled.div`
   display: flex;
-  justify-content: center;
-  padding: 0 42px;
-  width: 100%;
+  justify-content: space-between;
+  padding: 0 16px;
+  max-width: 760px;
   margin: 0 auto;
 
   input {
@@ -25,6 +25,10 @@ export const Header = styled.div`
     border: 0;
     border-bottom: 1px solid #c8d3d5;
     padding: 12px 8px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
   }
 
   button {
