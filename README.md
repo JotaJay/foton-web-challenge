@@ -23,3 +23,4 @@
 - [ ] Home page
 - [ ] Polish and finish layout
 - [ ] Dynamic buy link
+- [ ] LocalStorage to persist user interaction on book details page

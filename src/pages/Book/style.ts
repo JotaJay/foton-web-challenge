@@ -40,19 +40,19 @@ export const Column = styled.div`
   }
 
   div + div {
-    max-width: 200px;
+    width: 100%;
     margin-top: 16px;
     display: flex;
     justify-content: space-between;
-    strong {
-      margin-right: 8px;
-    }
+    align-items: center;
+
+    /* strong {
+      margin-right: 16px;
+    } */
   }
 
   span {
     font-size: 24px;
-    min-width: 114px;
-    margin-left: 64px;
   }
 `;
 
@@ -60,6 +60,7 @@ export const Buttons = styled.div`
   margin-top: 16px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 `;
 
 export const BuyButton = styled.button`

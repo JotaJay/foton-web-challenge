@@ -75,7 +75,6 @@ const List: React.FC = () => {
 
   const onLoadMoreClick = () => {
     const itemsLeft = totalItems - books.length;
-    console.log("itemsleft", itemsLeft);
     if (itemsLeft > 9) {
       setStartIndex(startIndex + 9);
       return;

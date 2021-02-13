@@ -107,7 +107,7 @@ const Book: React.FC = () => {
                     <strong>
                       {book.saleInfo?.listPrice
                         ? `$${book.saleInfo.listPrice.amount}`
-                        : "Price unavailable"}
+                        : "No price"}
                     </strong>
                     <span>
                       <StarRatingComponent
