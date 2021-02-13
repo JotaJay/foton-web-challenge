@@ -1,7 +1,7 @@
 ### Foton Tech Web Challenge
 
 - Challenge under development
-  [Stage URL](https://6027f014f649915be93a11c6--foton-challenge-rocks.netlify.app "App current state")
+  [Stage URL](https://60281a5424ed4fa5ad7b5d8e--foton-challenge-rocks.netlify.app "App current state")
 
 - [x] List page
 - [x] List page search working
@@ -17,7 +17,7 @@
 - [x] star rating
 - [x] useState to store user rating and favorite
 - [x] Load more books button
-- [ ] Burger menu and header component
+- [x] Burger menu and header component
 - [ ] Error handling
 
 - [ ] Home page
