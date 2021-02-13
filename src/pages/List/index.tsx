@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import api from "../../services/api";
-import LeftSideBurgerMenu from '../../components/LeftSideBurgerMenu'
-
+import LeftSideBurgerMenu from "../../components/LeftSideBurgerMenu";
+import { LoaderComponent } from "../../components/Loader";
 import { FiSearch } from "react-icons/fi";
 import { Background, Container, Header, Content } from "./style";
 import { useQueryParam, StringParam } from "use-query-params";
@@ -26,7 +26,7 @@ const List: React.FC = () => {
   const { register, handleSubmit } = useForm({
     defaultValues: {
       title,
-    }
+    },
   });
   const [books, setBooks] = useState<Book[]>([]);
 
@@ -63,16 +63,20 @@ const List: React.FC = () => {
             </form>
           </Header>
           <Content>
-            {books?.map((book) => {
-              return (
-                <Link key={book.id} to={`/books/${book.id}`}>
-                  <img
-                    src={book?.volumeInfo?.imageLinks?.thumbnail}
-                    alt={book?.volumeInfo?.title}
-                  />
-                </Link>
-              );
-            })}
+            {books.length < 1 ? (
+              <LoaderComponent />
+            ) : (
+              books.map((book) => {
+                return (
+                  <Link key={book.id} to={`/books/${book.id}`}>
+                    <img
+                      src={book?.volumeInfo?.imageLinks?.thumbnail}
+                      alt={book?.volumeInfo?.title}
+                    />
+                  </Link>
+                );
+              })
+            )}
           </Content>
         </Container>
       </Background>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useRouteMatch } from "react-router-dom";
 import { FiHeart, FiSearch } from "react-icons/fi";
 import StarRatingComponent from "react-star-rating-component";
+import { LoaderComponent } from "../../components/Loader";
 
 import api from "../../services/api";
 import { sanitizeString } from "../../utils/sanitizeString";
@@ -69,12 +70,14 @@ const Book: React.FC = () => {
             <FiSearch size={24} />
           </button>
         </Header>
-        {book && (
+        {!book ? (
+          <LoaderComponent />
+        ) : (
           <>
             <Content>
               <Card>
                 <img
-                  src={book?.volumeInfo?.imageLinks?.thumbnail}
+                  src={book.volumeInfo.imageLinks.thumbnail}
                   alt={book.volumeInfo.title}
                 />
                 <Column>
@@ -82,20 +85,20 @@ const Book: React.FC = () => {
                     <strong>{book.volumeInfo.title}</strong>
                     <p>
                       By{" "}
-                      {book?.volumeInfo?.authors
-                        ? book?.volumeInfo?.authors[0]
+                      {book.volumeInfo.authors
+                        ? book.volumeInfo.authors[0]
                         : book.volumeInfo.publisher}
                     </p>
                   </div>
 
                   <div>
                     <strong>
-                      {book?.saleInfo?.listPrice
+                      {book.saleInfo?.listPrice
                         ? `$${book.saleInfo.listPrice.amount}`
                         : "Price unavailable"}
                     </strong>
                     <span>
-                      {book?.volumeInfo?.averageRating ? (
+                      {book.volumeInfo.averageRating ? (
                         <StarRatingComponent
                           name="rate1"
                           starCount={5}
@@ -117,7 +120,7 @@ const Book: React.FC = () => {
                 </Column>
               </Card>
               <Buttons>
-                <span>{book?.volumeInfo?.printedPageCount} pages</span>
+                <span>{book.volumeInfo.printedPageCount} pages</span>
                 <div>
                   <BuyButton>Buy</BuyButton>
                   <FavoriteButton>
