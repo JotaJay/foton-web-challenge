@@ -10,7 +10,7 @@ export const Header = styled.div`
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  padding: 40px 42px 0 42px;
+  padding: 40px 16px 0 16px;
 
   input {
     background: transparent;

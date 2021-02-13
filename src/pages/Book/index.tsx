@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useRouteMatch } from "react-router-dom";
+import { useRouteMatch, useHistory } from "react-router-dom";
 import {
   AiFillHeart,
   AiOutlineHeart,
@@ -50,6 +50,7 @@ const Book: React.FC = () => {
   const {
     params: { bookId },
   } = useRouteMatch<QueryParams>();
+  const history = useHistory();
   const [book, setBook] = useState<Book | null>();
   const [rating, setRating] = useState(0);
   const [favorite, setFavorite] = useState(false);
@@ -74,11 +75,15 @@ const Book: React.FC = () => {
     setFavorite(!favorite);
   };
 
+  const handleGoBack = () => {
+    history.goBack();
+  };
+
   return (
     <div>
       <Container>
         <Header>
-          <AiOutlineArrowLeft size={26} />
+          <AiOutlineArrowLeft size={26} onClick={handleGoBack} />
           <form>
             <input type="text" name="book" id="book" />
           </form>
