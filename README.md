@@ -1,22 +1,23 @@
 ### Foton Tech Web Challenge
 
 - Challenge under development
-- Please go to /books to check the list page
 
-- [ ] Home page
 - [x] List page
-- [ ] List page search working
-- [ ] List page useEffect to fetch books
+- [x] List page search working
+- [x] List page useEffect to fetch books
 - [x] Book details page
 - [x] Books list
 - [x] Book clickable
-- [ ] Search book by name
-- [ ] Load more books button
+- [x] Search book by name
 - [x] API service
 - [x] Routes
 - [x] Route params
+- [x] IsLoading
+- [x] star rating
+- [ ] Home page
 - [ ] Error handling
-- [ ] IsLoading
+- [ ] Load more books button
+- [ ] Dynamic buy link
 - [ ] useState to store user likes, comments and rate
-- [ ] CSS for home, list and book details page
-- [ ] Font family, size and color for whole application
+- [ ] Burger menu and header component
+- [ ] Polish and finish layout
