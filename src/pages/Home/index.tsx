@@ -1,6 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { AiOutlineSearch } from "react-icons/ai";
 import { Background, Container } from "./style";
 
 const Home: React.FC = () => {
@@ -14,10 +15,14 @@ const Home: React.FC = () => {
   return (
     <Background>
       <Container>
-        <h1>FOTON BOOKY</h1>
+        <h1>Foton Booky</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <input type="text" name="book" ref={register} />
-          <button>Search</button>
+          <div>
+            <input type="text" name="book" ref={register} />
+            <button>
+              <AiOutlineSearch size={24} />
+            </button>
+          </div>
         </form>
       </Container>
     </Background>
