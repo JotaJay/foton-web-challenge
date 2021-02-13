@@ -16,9 +16,10 @@
 - [x] IsLoading
 - [x] star rating
 - [x] useState to store user rating and favorite
-- [ ] Home page
-- [ ] Error handling
 - [ ] Load more books button
-- [ ] Dynamic buy link
 - [ ] Burger menu and header component
+- [ ] Error handling
+
+- [ ] Dynamic buy link
+- [ ] Home page
 - [ ] Polish and finish layout
