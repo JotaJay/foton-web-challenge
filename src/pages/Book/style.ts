@@ -92,7 +92,7 @@ export const FavoriteButton = styled.button`
   background: #e05568;
   border-radius: 50%;
   color: #fff;
-  padding: 4px 6px;
+  padding: 2px 8px;
 
   transition: transform 0.2s;
 
@@ -101,7 +101,7 @@ export const FavoriteButton = styled.button`
   }
 
   svg {
-    margin-top: 4px;
+    margin-top: 6px;
   }
 `;
 
