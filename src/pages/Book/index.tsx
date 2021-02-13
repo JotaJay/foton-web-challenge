@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useRouteMatch } from "react-router-dom";
-import { FiHeart, FiSearch } from "react-icons/fi";
+import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
+import { FiSearch } from "react-icons/fi";
 import StarRatingComponent from "react-star-rating-component";
 import { LoaderComponent } from "../../components/Loader";
 
@@ -46,8 +47,8 @@ const Book: React.FC = () => {
     params: { bookId },
   } = useRouteMatch<QueryParams>();
   const [book, setBook] = useState<Book | null>();
-  const [rating, setRating] = useState<number>(0);
-  const [favorite, setFavorite] = useState();
+  const [rating, setRating] = useState(0);
+  const [favorite, setFavorite] = useState(false);
 
   useEffect(() => {
     /**
@@ -63,6 +64,10 @@ const Book: React.FC = () => {
 
   const setNewRating = (newValue: number) => {
     setRating(newValue);
+  };
+
+  const handleSetFavorite = () => {
+    setFavorite(!favorite);
   };
 
   return (
@@ -122,8 +127,8 @@ const Book: React.FC = () => {
                 <span>{book.volumeInfo.printedPageCount} pages</span>
                 <div>
                   <BuyButton>Buy</BuyButton>
-                  <FavoriteButton>
-                    <FiHeart />
+                  <FavoriteButton onClick={handleSetFavorite}>
+                    {favorite ? <AiFillHeart /> : <AiOutlineHeart />}
                   </FavoriteButton>
                 </div>
               </Buttons>
