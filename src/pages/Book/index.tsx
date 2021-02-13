@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useRouteMatch } from "react-router-dom";
 import { FiHeart, FiSearch } from "react-icons/fi";
+import StarRatingComponent from "react-star-rating-component";
 
 import api from "../../services/api";
 import { sanitizeString } from "../../utils/sanitizeString";
@@ -40,7 +41,9 @@ interface Book {
 }
 
 const Book: React.FC = () => {
-  const { params: { bookId } } = useRouteMatch<QueryParams>();
+  const {
+    params: { bookId },
+  } = useRouteMatch<QueryParams>();
   const [book, setBook] = useState<Book | null>();
 
   useEffect(() => {
@@ -49,14 +52,10 @@ const Book: React.FC = () => {
      */
     const getBookById = async () => {
       const { data } = await api.get<Book>(`volumes/${bookId}`);
-      setBook(data)
-    }
-    getBookById()
+      setBook(data);
+    };
+    getBookById();
   }, [bookId]);
-
-  const sanitizeString = (string: string): string => {
-    return string.replace(/<(.|\n)*?>/g, "");
-  };
 
   return (
     <div>
@@ -96,9 +95,23 @@ const Book: React.FC = () => {
                         : "Price unavailable"}
                     </strong>
                     <span>
-                      {book?.volumeInfo?.averageRating
-                        ? book?.volumeInfo?.averageRating
-                        : 0}
+                      {book?.volumeInfo?.averageRating ? (
+                        <StarRatingComponent
+                          name="rate1"
+                          starCount={5}
+                          value={book?.volumeInfo?.averageRating}
+                          editing={false}
+                          emptyStarColor={"#ccc"}
+                        />
+                      ) : (
+                        <StarRatingComponent
+                          name="rate1"
+                          starCount={5}
+                          value={0}
+                          editing={false}
+                          emptyStarColor={"#ccc"}
+                        />
+                      )}
                     </span>
                   </div>
                 </Column>

@@ -48,6 +48,10 @@ export const Column = styled.div`
       margin-right: 8px;
     }
   }
+
+  span {
+    min-width: 80px;
+  }
 `;
 
 export const Buttons = styled.div`
