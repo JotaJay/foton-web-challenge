@@ -51,7 +51,8 @@ export const Column = styled.div`
 
   span {
     font-size: 24px;
-    min-width: 80px;
+    min-width: 114px;
+    margin-left: 64px;
   }
 `;
 
