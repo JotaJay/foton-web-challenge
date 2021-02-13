@@ -46,7 +46,7 @@ export const Container = styled.div`
       background: transparent;
 
       svg {
-        color: #c8d3d5;
+        color: #747c92;
       }
     }
   }
@@ -72,7 +72,7 @@ export const Container = styled.div`
         font-size: 12px;
 
         &::placeholder {
-          font-size: 6px;
+          font-size: 8px;
         }
       }
     }

@@ -23,7 +23,7 @@ export const Header = styled.div`
   input {
     background: transparent;
     border: 0;
-    border-bottom: 1px solid #c8d3d5;
+    border-bottom: 1px solid #747c92;
     padding: 12px 8px;
     text-align: center;
     font-size: 18px;
@@ -37,7 +37,7 @@ export const Header = styled.div`
 
   button {
     border: 0;
-    color: #c8d3d5;
+    color: #747c92;
     background: transparent;
   }
 
