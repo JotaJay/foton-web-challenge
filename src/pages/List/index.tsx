@@ -2,12 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import api from "../../services/api";
-import LeftSideBurgerMenu from "../../components/LeftSideBurgerMenu";
 import { LoaderComponent } from "../../components/Loader";
 import { FiSearch } from "react-icons/fi";
 import { Background, Container, Header, Content, Center } from "./style";
 import Button from "../../components/Button";
 import { useQueryParam, StringParam } from "use-query-params";
+
+import "./burgerMenuStyle.css";
 
 interface Book {
   id: string;
@@ -84,42 +85,60 @@ const List: React.FC = () => {
   };
 
   return (
-    <LeftSideBurgerMenu>
-      <Background>
-        <Container>
-          <Header>
-            <form onSubmit={handleSubmit(onSubmit)}>
-              <div>&nbsp;</div>
-              <input type="text" name="title" ref={register} />
-              <button>
-                <FiSearch size={24} />
-              </button>
-            </form>
-          </Header>
-          <Content>
-            {books.length < 1 ? (
-              <LoaderComponent />
-            ) : (
-              books.map((book) => {
-                return (
-                  <Link key={book.id} to={`/books/${book.id}`}>
-                    <img
-                      src={book?.volumeInfo?.imageLinks?.thumbnail}
-                      alt={book?.volumeInfo?.title}
-                    />
-                  </Link>
-                );
-              })
-            )}
-          </Content>
-          {books.length && totalItems > books.length && (
-            <Center>
-              <Button onClick={onLoadMoreClick}>Load more</Button>
-            </Center>
+    <Background>
+      <Container>
+        <Header>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <div className="dropdown">
+              <span className="burgerMenu">
+                <div className="burgerMenuBar"></div>
+                <div className="burgerMenuBar"></div>
+                <div className="burgerMenuBar"></div>
+              </span>
+              <div className="dropdown-content">
+                <ul className="bugerMenuList">
+                  <li>
+                    <a href="/" className="linkToHome">
+                      Home
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/books" className="linkToList">
+                      List
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <input type="text" name="title" ref={register} />
+            <button>
+              <FiSearch size={24} />
+            </button>
+          </form>
+        </Header>
+        <Content>
+          {books.length < 1 ? (
+            <LoaderComponent />
+          ) : (
+            books.map((book) => {
+              return (
+                <Link key={book.id} to={`/books/${book.id}`}>
+                  <img
+                    src={book?.volumeInfo?.imageLinks?.thumbnail}
+                    alt={book?.volumeInfo?.title}
+                  />
+                </Link>
+              );
+            })
           )}
-        </Container>
-      </Background>
-    </LeftSideBurgerMenu>
+        </Content>
+        {books.length > 1 && totalItems > books.length && (
+          <Center>
+            <Button onClick={onLoadMoreClick}>Load more</Button>
+          </Center>
+        )}
+      </Container>
+    </Background>
   );
 };
 

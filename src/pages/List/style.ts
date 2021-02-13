@@ -19,23 +19,6 @@ export const Header = styled.div`
   padding: 0 42px;
   width: 100%;
   margin: 0 auto;
-  background: pink;
-
-  /* smartphones in portrait mode */
-  @media (max-width: 420px) {
-    background: green;
-  }
-
-  /* smartphones in landscape mode */
-  @media (max-width: 767px) {
-    width: 78%;
-    background: transparent;
-
-    form {
-      min-width: 330px;
-      width: 100%;
-    }
-  }
 
   input {
     background: transparent;
@@ -51,14 +34,10 @@ export const Header = styled.div`
   }
 
   form {
-    width: 100%;
+    width: 90%;
     display: flex;
     justify-content: space-between;
   }
-
-  /* @media (max-width: 800px) {
-    background: black;
-  } */
 `;
 
 export const Content = styled.div`
