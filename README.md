@@ -1,8 +1,7 @@
 ### Foton Tech Web Challenge
 
 - Challenge under development
-  [I'm an inline-style link](https://www.google.com)
-  [I'm an inline-style link with title](https://www.google.com "Google's Homepage")
+  [Stage URL](https://60273dbab46f993863e43899--foton-challenge-rocks.netlify.app "App current state")
 
 - [x] List page
 - [x] List page search working
