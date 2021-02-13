@@ -34,6 +34,11 @@ export const Content = styled.div`
 
 export const Column = styled.div`
   margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 160px;
+
   p {
     margin-bottom: 18px;
     margin-top: 6px;
@@ -105,6 +110,7 @@ export const Card = styled.div`
   align-items: center;
 
   img {
+    height: 160px;
     margin-right: 14px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
   }
