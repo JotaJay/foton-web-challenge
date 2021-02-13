@@ -133,7 +133,7 @@ const List: React.FC = () => {
         </Content>
         {books?.length > 1 && totalItems > books.length && (
           <Center>
-            <Button onClick={onLoadMoreClick}>Load more</Button>
+            <Button onClick={onLoadMoreClick}>Load More</Button>
           </Center>
         )}
       </Container>
