@@ -5,7 +5,8 @@ import api from "../../services/api";
 import LeftSideBurgerMenu from "../../components/LeftSideBurgerMenu";
 import { LoaderComponent } from "../../components/Loader";
 import { FiSearch } from "react-icons/fi";
-import { Background, Container, Header, Content } from "./style";
+import { Background, Container, Header, Content, Center } from "./style";
+import Button from "../../components/Button";
 import { useQueryParam, StringParam } from "use-query-params";
 
 interface Book {
@@ -102,7 +103,9 @@ const List: React.FC = () => {
               })
             )}
           </Content>
-          <button onClick={onLoadMoreClick}>Load more</button>
+          <Center>
+            <Button onClick={onLoadMoreClick}>Load more</Button>
+          </Center>
         </Container>
       </Background>
     </LeftSideBurgerMenu>

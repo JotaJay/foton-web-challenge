@@ -63,3 +63,9 @@ export const Content = styled.div`
     height: 300px;
   }
 `;
+
+export const Center = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`;
