@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import api from "../../services/api";
 import { LoaderComponent } from "../../components/Loader";
-import { FiSearch } from "react-icons/fi";
+import { AiOutlineSearch } from "react-icons/ai";
 import { Background, Container, Header, Content, Center } from "./style";
 import Button from "../../components/Button";
 import { useQueryParam, StringParam } from "use-query-params";
@@ -111,7 +111,7 @@ const List: React.FC = () => {
             </div>
             <input type="text" name="title" ref={register} />
             <button>
-              <FiSearch size={24} />
+              <AiOutlineSearch size={32} />
             </button>
           </form>
         </Header>

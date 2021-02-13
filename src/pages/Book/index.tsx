@@ -121,7 +121,7 @@ const Book: React.FC = () => {
                         onStarClick={(newValue) => {
                           setNewRating(newValue);
                         }}
-                        emptyStarColor={"#ccc"}
+                        emptyStarColor={"#6e7271"}
                       />
                     </span>
                   </div>
