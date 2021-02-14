@@ -124,6 +124,7 @@ export const Card = styled.div`
 
   img {
     height: 160px;
+    max-width: 112.516px;
     margin-right: 14px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
   }
