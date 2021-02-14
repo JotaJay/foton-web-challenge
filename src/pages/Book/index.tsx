@@ -23,6 +23,7 @@ import {
   Buttons,
   BuyButton,
   FavoriteButton,
+  InputError,
 } from "./style";
 
 interface QueryParams {
@@ -55,17 +56,19 @@ const Book: React.FC = () => {
   const [book, setBook] = useState<Book | null>();
   const [rating, setRating] = useState(0);
   const [favorite, setFavorite] = useState(false);
+  const [inputError, setInputError] = useState("");
 
   useEffect(() => {
-    /**
-     * Se o livro não existir?
-     */
-    const getBookById = async () => {
-      const { data } = await api.get<Book>(`volumes/${bookId}`);
-      setBook(data);
-      setRating(data.volumeInfo.averageRating || 0);
-    };
-    getBookById();
+    try {
+      const getBookById = async () => {
+        const { data } = await api.get<Book>(`volumes/${bookId}`);
+        setBook(data);
+        setRating(data.volumeInfo.averageRating || 0);
+      };
+      getBookById();
+    } catch (err) {
+      setInputError("Oops...something went wrong.");
+    }
   }, [bookId]);
 
   const setNewRating = (newValue: number) => {
@@ -96,6 +99,7 @@ const Book: React.FC = () => {
           <button>
             <AiOutlineSearch size={32} />
           </button>
+          {inputError && <InputError>{inputError}</InputError>}
         </Header>
         {!book ? (
           <LoaderComponent />

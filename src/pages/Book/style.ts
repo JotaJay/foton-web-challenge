@@ -123,6 +123,7 @@ export const Card = styled.div`
   align-items: center;
 
   img {
+    overflow: hidden;
     height: 160px;
     max-width: 112.516px;
     margin-right: 14px;
@@ -138,4 +139,11 @@ export const Description = styled.div`
   padding: 40px 20px;
   margin: 0 auto;
   background: #fff;
+`;
+
+export const InputError = styled.span`
+  color: #c53030;
+  display: block;
+  margin-top: 8px;
+  text-align: center;
 `;

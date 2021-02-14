@@ -85,3 +85,10 @@ export const Center = styled.div`
   display: flex;
   justify-content: center;
 `;
+
+export const InputError = styled.span`
+  color: #c53030;
+  display: block;
+  margin-top: 8px;
+  text-align: center;
+`;
