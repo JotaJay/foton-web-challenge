@@ -1,7 +1,7 @@
 ### Foton Tech Web Challenge
 
 - Challenge under development
-  [Stage URL](https://6028581eb46f99ce8ae43aba--foton-challenge-rocks.netlify.app "App current state")
+  [Stage URL](https://602891ab66133462aeda0a0d--foton-challenge-rocks.netlify.app "App current state")
 
 - [x] List page
 - [x] List page search working
@@ -20,7 +20,11 @@
 - [x] Burger menu and header component
 - [x] Home page
 - [x] Polish and finish layout
-- [ ] Error handling
+- [x] Error handling
+
+- Good to have
 
 - [ ] Dynamic buy link
 - [ ] LocalStorage to persist user interaction on book details page
+- [ ] API testing
+- [ ] SWR for caching
