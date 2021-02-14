@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, InputHTMLAttributes } from "react";
 import { useRouteMatch, useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import {
@@ -73,6 +73,17 @@ const Book: React.FC = () => {
     }
   }, [bookId]);
 
+  useEffect(() => {
+    const detailsInput = document.getElementById(
+      "bookDetailsInput"
+    ) as HTMLInputElement;
+    if (book) {
+      {
+        detailsInput && (detailsInput.value = book.volumeInfo.title);
+      }
+    }
+  }, [book]);
+
   const setNewRating = (newValue: number) => {
     setRating(newValue);
   };
@@ -104,7 +115,7 @@ const Book: React.FC = () => {
             <input
               type="text"
               name="book"
-              id="book"
+              id="bookDetailsInput"
               ref={register}
               placeholder="Type a book title or genre"
             />

@@ -117,6 +117,7 @@ const List: React.FC = () => {
               name="title"
               ref={register}
               placeholder="Type a book title or genre"
+              id="booksDetailSearch"
             />
             <button>
               <AiOutlineSearch size={32} />

@@ -18,6 +18,8 @@ export const Header = styled.div`
     border-bottom: 1px solid #747c92;
     padding: 8px;
     text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
 
     &::placeholder {
       font-size: 14px;
