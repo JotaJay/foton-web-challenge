@@ -55,7 +55,7 @@ const List: React.FC = () => {
         setBooks(data.items);
         setTotalItems(data.totalItems);
       } catch (err) {
-        setInputError("Oops...something went wrong");
+        setInputError("Oops... something went wrong");
       }
     };
     setBooks([]);
@@ -71,7 +71,7 @@ const List: React.FC = () => {
         setInputError("");
         setBooks(books.concat(data.items));
       } catch (err) {
-        setInputError("Oops...something went wrong");
+        setInputError("Oops... something went wrong");
       }
     };
     getBooks();

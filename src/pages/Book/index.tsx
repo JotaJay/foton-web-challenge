@@ -67,7 +67,7 @@ const Book: React.FC = () => {
       };
       getBookById();
     } catch (err) {
-      setInputError("Oops...something went wrong.");
+      setInputError("Oops... something went wrong.");
     }
   }, [bookId]);
 
