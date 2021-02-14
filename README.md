@@ -22,9 +22,11 @@
 - [x] Polish and finish layout
 - [x] Error handling
 
-- Good to have
+-> Would like to implement
 
 - [ ] Dynamic buy link
 - [ ] LocalStorage to persist user interaction on book details page
 - [ ] API testing
 - [ ] SWR for caching
+- [ ] Change burger menu to a react component
+- [ ] storybook
