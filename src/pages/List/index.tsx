@@ -66,7 +66,7 @@ const List: React.FC = () => {
     const getBooks = async () => {
       try {
         const { data } = await api.get<QueryResponse>(
-          `volumes?q=${title}&startIndex=${startIndex}&maxResults=${maxResults}`
+          `volumes?q=${title}&startIndex=${startIndex}&maxResults=${maxResults}&printType=books`
         );
         setInputError("");
         setBooks(books.concat(data.items));
