@@ -9,7 +9,7 @@
 - [x] Book details page
 - [x] Books list
 - [x] Book clickable
-- [x] Search book by name
+- [x] Search book by name or genre
 - [x] API service
 - [x] Routes
 - [x] Route params
