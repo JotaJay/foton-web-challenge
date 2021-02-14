@@ -51,6 +51,7 @@ export const Container = styled.div`
 
       svg {
         color: #747c92;
+        margin-bottom: -8px;
       }
     }
   }
