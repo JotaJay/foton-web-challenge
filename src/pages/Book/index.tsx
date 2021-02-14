@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useRouteMatch, useHistory } from "react-router-dom";
+import { useForm } from "react-hook-form";
 import {
   AiFillHeart,
   AiOutlineHeart,
@@ -57,6 +58,7 @@ const Book: React.FC = () => {
   const [rating, setRating] = useState(0);
   const [favorite, setFavorite] = useState(false);
   const [inputError, setInputError] = useState("");
+  const { register, handleSubmit } = useForm();
 
   useEffect(() => {
     try {
@@ -83,20 +85,31 @@ const Book: React.FC = () => {
     history.goBack();
   };
 
+  const onSubmit = (search: Record<string, string>) => {
+    if (search.book.trim().length < 1) {
+      return;
+    }
+    history.push({
+      pathname: "/books",
+      search: `?title=${search.book.trim()}`,
+    });
+  };
+
   return (
     <div>
       <Container>
         <Header>
           <AiOutlineArrowLeft size={26} onClick={handleGoBack} />
-          <form>
+          <form id="booksDetailForm" onSubmit={handleSubmit(onSubmit)}>
             <input
               type="text"
               name="book"
               id="book"
+              ref={register}
               placeholder="Type a book title or genre"
             />
           </form>
-          <button>
+          <button type="submit" form="booksDetailForm">
             <AiOutlineSearch size={32} />
           </button>
           {inputError && <InputError>{inputError}</InputError>}
