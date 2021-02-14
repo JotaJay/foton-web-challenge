@@ -19,6 +19,10 @@ export const Container = styled.div`
 
   h1 {
     font-size: 64px;
+    font-family: Ubuntu;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #272727;
   }
 
   form {
@@ -54,6 +58,10 @@ export const Container = styled.div`
   @media (max-width: 600px) {
     h1 {
       font-size: 32px;
+      font-family: Ubuntu;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #272727;
     }
     form {
       div {
