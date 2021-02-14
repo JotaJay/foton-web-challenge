@@ -6,6 +6,7 @@ import { LoaderComponent } from "../components/Loader";
 const Home = lazy(() => import("../pages/Home"));
 const List = lazy(() => import("../pages/List"));
 const Book = lazy(() => import("../pages/Book"));
+import HomeAlternative from "../pages/HomeAlternative";
 
 const Routes = () => {
   return (
@@ -14,6 +15,7 @@ const Routes = () => {
         <QueryParamProvider ReactRouterRoute={Route}>
           <Suspense fallback={LoaderComponent}>
             <Route path="/" exact component={Home} />
+            <Route path="/alternative" exact component={HomeAlternative} />
             <Route path="/books" exact component={List} />
             <Route path="/books/:bookId+" component={Book} />
           </Suspense>
