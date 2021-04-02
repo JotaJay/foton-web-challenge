@@ -1,5 +1,23 @@
 ### Foton Tech Web Challenge
 
+## Getting started
+
+Install the dependencies
+
+```bash
+yarn
+# OR
+npm install
+```
+
+Start the project
+
+```bash
+yarn start
+# OR
+npm run start
+```
+
 [Home Layout 1](https://602891ab66133462aeda0a0d--foton-challenge-rocks.netlify.app "App current state")\
 [Home Layout 2 - needs polishment](https://602896f1e659433c31017532--foton-challenge-rocks.netlify.app "App current state")
 
